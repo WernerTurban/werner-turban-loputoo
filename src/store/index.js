@@ -18,6 +18,12 @@ export default new Vuex.Store({
     daysOfMonth: [],
     appointments: [],
     mailSessions: [],
+    therapyTypes: [
+      "Individuaalteraapia",
+      "Alternatiivteraapia",
+      "Uneteraapia",
+      "Lapsed ja noorukid"
+    ],
     time: [
       {
         id: 0,

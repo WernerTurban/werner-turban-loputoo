@@ -46,7 +46,7 @@
               depressed
               dark
               @click="showConversation()"
-              >Kuva kogu vestlust</v-btn
+              >Kuva kogu vestlus</v-btn
             >
           </div>
         </v-col>
@@ -54,39 +54,37 @@
     </v-card>
     <v-dialog v-model="showSendDialog" max-width="600">
       <v-card>
-        <v-container>
-          <v-form ref="form">
-            <v-card-title>Saada vastus</v-card-title>
-            <v-row class="ml-2" style="margin-bottom: 10px">
-              <v-col cols="12">
-                <v-textarea
-                  label="Vastuse sisu"
-                  v-model="replyText"
-                  auto-grow
-                  rows="1"
-                  :rules="inputRules"
+        <v-form ref="form">
+          <v-card-title>Saada vastus</v-card-title>
+          <v-row class="ml-2" style="margin-bottom: 10px">
+            <v-col cols="12">
+              <v-textarea
+                label="Vastuse sisu"
+                v-model="replyText"
+                auto-grow
+                rows="1"
+                :rules="inputRules"
+              >
+              </v-textarea>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12" align="end">
+              <div>
+                <v-btn
+                  style="margin-top: 5px; margin-right: 30px"
+                  right
+                  rounded
+                  color="purple darken-1"
+                  depressed
+                  dark
+                  @click="send()"
+                  >Vasta</v-btn
                 >
-                </v-textarea>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="12" align="end">
-                <div>
-                  <v-btn
-                    style="margin-top: 5px; margin-right: 30px"
-                    right
-                    rounded
-                    color="purple darken-1"
-                    depressed
-                    dark
-                    @click="send()"
-                    >Vasta</v-btn
-                  >
-                </div>
-              </v-col>
-            </v-row>
-          </v-form>
-        </v-container>
+              </div>
+            </v-col>
+          </v-row>
+        </v-form>
       </v-card>
     </v-dialog>
     <SessionMessages v-bind:messages="messages" v-if="showMessages" />
